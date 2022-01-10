@@ -10,7 +10,10 @@
     "lint:css": "stylelint **/*.scss",
     "lint:js": "eslint ./src",
     "lint": "concurrently \"npm run lint:html\" \"npm run lint:css\" \"npm run lint:js\"",
-    "prepare": "husky install && cp ./.husky/pre-commit ./.git/hooks/pre-commit"
+    "prepare": "husky install && cp ./.husky/pre-commit ./.git/hooks/pre-commit",
+    "build": "rm -rf dist && parcel build ./src/index.html --public-url ./",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +25,7 @@
     "eslint": "^8.6.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
+    "gh-pages": "^3.2.3",
     "husky": "^7.0.4",
     "parcel": "^1.12.3",
     "stylelint": "^14.2.0",
