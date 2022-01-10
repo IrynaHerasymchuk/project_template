@@ -1,2 +1,1 @@
-#Project name
-Poject description
+## Vanilla JS and SASS project template
